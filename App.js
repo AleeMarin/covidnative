@@ -1,6 +1,7 @@
 import React from "react";
-import {useFonts} from "expo-font";
 import AppLoading from "expo-app-loading";
+import {useFonts} from "expo-font";
+import {StatusBar} from "expo-status-bar";
 import {SafeAreaProvider} from "react-native-safe-area-context";
 import Header from "./app/components/Header";
 import Navigation from "./app/navigations/Navigation";
@@ -21,6 +22,9 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
+        <StatusBar style="light"
+                   backgroundColor="black"
+        />
         <Header/>
         <Navigation/>
       </SafeAreaProvider>
