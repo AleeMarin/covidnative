@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Aplicación desarrollada en React Native (con Expo) para la visualización de datos de la API pública COVID19\nhttps://covid19api.com/​",
+    "githubUrl": "https://github.com/AleeMarin/covidnative"
   }
 }

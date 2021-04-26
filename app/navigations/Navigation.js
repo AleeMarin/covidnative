@@ -1,26 +1,35 @@
 import React from "react";
-import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
+import {NavigationContainer} from "@react-navigation/native";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {Icon} from "react-native-elements";
 import HomeStack from "./HomeStack";
-
-const MyTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: "#fff",
-  },
-};
+import {customTheme} from "../themes/customTheme";
 
 const Tab = createBottomTabNavigator();
 
-export default function Navigation() {
+export default () => {
+  const screenOptions = (route, color) => {
+    let iconName;
+    switch (route.name) {
+      case "Home":
+        iconName = "home"
+        break;
+    }
+    return (
+      <Icon type="material-community"
+            name={iconName}
+            color={color}
+      />
+    );
+  };
+
   return (
-    <NavigationContainer theme={MyTheme}>
+    <NavigationContainer theme={customTheme}>
       <Tab.Navigator
+        tabBar={() => null}
         tabBarOptions={
           {
-            activeTintColor: "#00a680",
+            activeTintColor: "#000",
             inactiveTintColor: "#666",
           }
         }
@@ -40,22 +49,5 @@ export default function Navigation() {
         />
       </Tab.Navigator>
     </NavigationContainer>
-  )
-}
-
-function screenOptions(route, color) {
-  let iconName;
-
-  switch (route.name) {
-    case "Home":
-      iconName = "home"
-      break;
-  }
-
-  return (
-    <Icon type="material-community"
-          name={iconName}
-          color={color}
-    />
-  )
-}
+  );
+};

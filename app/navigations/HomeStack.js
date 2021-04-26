@@ -4,17 +4,12 @@ import Home from "../screens/Home";
 
 const Stack = createStackNavigator();
 
-export default function HomeStack() {
+export default () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home"
                     component={Home}
-                    options={
-                      {
-                        title: "Inicio"
-                      }
-                    }
       />
     </Stack.Navigator>
-  )
-}
+  );
+};
